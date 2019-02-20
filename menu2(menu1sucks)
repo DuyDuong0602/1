@@ -1,0 +1,57 @@
+#include "menu.h"
+void menu()
+{
+	cout << "                            STUDENT MANAGEMENT SYSTEM                              " << endl;
+	cout << "Login (1)" << endl;
+	cout << "Enroll (2)" << endl;
+	int choice;
+	cin >> choice;
+	do
+	{
+		switch (choice)
+		{
+		case 1: login(); break;
+		case 2: enroll(); break;
+		default: cout << "Invalid choice, please try again";
+		}
+	} while (choice != 1 and choice != 2);
+}
+void login()
+{
+	int a;
+	cout << "1 for staff, 2 for lecturer, 3 for student";
+	cin >> a;
+	//Input ID and password, if valid, go to 3 function for 3 parts. Use "a" variable for example
+	do
+	{
+		switch (a)
+		{
+		case 1: staff(); break;
+		case 2: lecturer(); break;
+		case 3: student(); break;
+		default: cout << "Invalid";
+		}
+	} while (a != 1 or a != 2 or a != 3);
+	// Have to check if the account and password are correct, check them individually.
+	// Don't need exit function, if the user want to log out, call the menu funtion, if users want to close the window, they must do by themself.
+}
+void enroll()
+{
+	cout << "enroll" << endl;
+	//Input student profile to auto-generate account and password, when successfully auto-generate an account, call student function.
+}
+void staff()
+{
+	//Do staffs' stuffs	
+	cout << "staff" << endl;
+}
+void lecturer()
+{
+	//Do lecturers' stuffs
+	cout << "lecturer" << endl;
+}
+void student()
+{
+	//Do students' stuffs
+	cout << "student" << endl;
+}
